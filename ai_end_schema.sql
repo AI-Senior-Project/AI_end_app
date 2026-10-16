@@ -22,6 +22,7 @@ CREATE TABLE `user` (
   id_user     INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   name        VARCHAR(100) NOT NULL,
   email       VARCHAR(150) NOT NULL,
+  password_hash VARCHAR(255) NULL,                    -- รหัสผ่านเจ้าของร้าน (bcrypt hash)
   created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY uq_user_email (email)
 ) ENGINE=InnoDB;
